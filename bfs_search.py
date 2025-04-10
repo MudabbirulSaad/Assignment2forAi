@@ -1,5 +1,6 @@
 import sys
 from collections import deque
+from graph import Graph
 
 def read_problem(filename):
     with open(filename, 'r') as f:
@@ -36,6 +37,7 @@ def read_problem(filename):
     return nodes, edges, origin, destinations
 
 def reconstruct_path(came_from, goal):
+    """Reconstructs the path from origin to goal."""
     path = [goal]
     while goal in came_from:
         goal = came_from[goal]
@@ -43,22 +45,32 @@ def reconstruct_path(came_from, goal):
     return path[::-1]
 
 def bfs(origin, destinations, edges):
-    queue = deque([origin])
+    """
+    Breadth-First Search implementation.
+    - Expands nodes in ascending order when equal
+    - Maintains chronological order for equal priority nodes
+    - Tracks number of nodes generated
+    """
+    queue = deque([(origin, [origin])])  # Store node and its path
     visited = set()
-    came_from = {}
     nodes_generated = 0
-
+    
     while queue:
-        current = queue.popleft()
+        current, path = queue.popleft()
         nodes_generated += 1
+        
         if current in destinations:
-            return current, nodes_generated, reconstruct_path(came_from, current)
-        visited.add(current)
-        for neighbor, _ in sorted(edges.get(current, [])):  # sorted for consistent node order
-            if neighbor not in visited and neighbor not in queue:
-                came_from[neighbor] = current
-                queue.append(neighbor)
-
+            return current, nodes_generated, path
+            
+        # Get all neighbors and sort them in ascending order
+        neighbors = sorted(edges.get(current, []), key=lambda x: x[0])
+        
+        for neighbor, _ in neighbors:
+            if neighbor not in visited and neighbor not in [n for n, _ in queue]:
+                visited.add(neighbor)
+                new_path = path + [neighbor]
+                queue.append((neighbor, new_path))
+                
     return None, nodes_generated, []
 
 def main():
@@ -69,8 +81,13 @@ def main():
     filename = sys.argv[1]
     node_pos, edges, origin, destinations = read_problem(filename)
 
+    # Create graph instance
+    graph = Graph(node_pos, edges)
+    
+    # Run BFS
     goal, count, path = bfs(origin, destinations, edges)
 
+    # Output in required format
     print(f"{filename} BFS")
     if path:
         print(f"{goal} {count}")

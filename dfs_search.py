@@ -1,4 +1,5 @@
 import sys
+from graph import Graph
 
 def read_problem(filename):
     with open(filename, 'r') as f:
@@ -34,31 +35,36 @@ def read_problem(filename):
 
     return nodes, edges, origin, destinations
 
-def reconstruct_path(came_from, goal):
-    path = [goal]
-    while goal in came_from:
-        goal = came_from[goal]
-        path.append(goal)
-    return path[::-1]
-
 def dfs(origin, destinations, edges):
-    stack = [origin]
+    """
+    Depth-First Search implementation.
+    - Expands nodes in ascending order when equal
+    - Maintains chronological order for equal priority nodes
+    - Tracks number of nodes generated
+    """
+    stack = [(origin, [origin])]  # Store node and its path
     visited = set()
-    came_from = {}
     nodes_generated = 0
 
     while stack:
-        current = stack.pop()
+        current, path = stack.pop()
         if current in visited:
             continue
+            
         visited.add(current)
         nodes_generated += 1
+
         if current in destinations:
-            return current, nodes_generated, reconstruct_path(came_from, current)
-        for neighbor, _ in sorted(edges.get(current, []), reverse=True):  # reverse for correct order
+            return current, nodes_generated, path
+
+        # Get neighbors and sort in descending order (since we're using a stack)
+        # This ensures we process smaller numbers first when expanding
+        neighbors = sorted(edges.get(current, []), key=lambda x: x[0], reverse=True)
+        
+        for neighbor, _ in neighbors:
             if neighbor not in visited:
-                came_from[neighbor] = current
-                stack.append(neighbor)
+                new_path = path + [neighbor]
+                stack.append((neighbor, new_path))
 
     return None, nodes_generated, []
 
@@ -70,8 +76,13 @@ def main():
     filename = sys.argv[1]
     node_pos, edges, origin, destinations = read_problem(filename)
 
+    # Create graph instance
+    graph = Graph(node_pos, edges)
+    
+    # Run DFS
     goal, count, path = dfs(origin, destinations, edges)
 
+    # Output in required format
     print(f"{filename} DFS")
     if path:
         print(f"{goal} {count}")
