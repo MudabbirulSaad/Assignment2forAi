@@ -32,7 +32,7 @@ def bfs(origin, destinations, edges):
         if current in destinations:
             return current, nodes_generated, path
             
-        # Get all neighbors and sort them in ascending order
+        # Get all neighbors and sort in ascending order
         neighbors = sorted(edges.get(current, []), key=lambda x: x[0])
         
         for neighbor, _ in neighbors:
