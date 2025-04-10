@@ -71,7 +71,12 @@ The following search algorithms have been implemented:
   - Time Complexity: O(b^d) where b is branching factor and d is depth of the solution
   - Memory Requirement: Higher than other algorithms
 
-- ❌ **CUS1 (Custom Search 1)** - Uninformed: Find a path to reach the goal (self-researched)
+- ✅ **CUS1 (Iterative Deepening DFS)** - Uninformed: Combines benefits of BFS and DFS
+  - Implementation: Uses depth-limited DFS with increasing depth limits
+  - Characteristics: Complete, optimal for unweighted graphs, and memory-efficient
+  - Time Complexity: O(b^d) where b is branching factor and d is depth of the solution
+  - Benefits: Guarantees finding the shortest path while using minimal memory
+
 - ❌ **CUS2 (Custom Search 2)** - Informed: Find shortest path with least moves (self-researched)
 
 All search algorithms are implemented to handle the following requirements:
@@ -90,7 +95,7 @@ The implementation allows seamless switching between algorithms through the unif
 | DFS Implementation                | ✅ Complete | Depth-First Search with proper node expansion order   |
 | GBFS Implementation               | ✅ Complete | Greedy Best-First Search with Euclidean heuristic     |
 | A* Search Implementation          | ✅ Complete | A* Search with Euclidean heuristic and path costs     |
-| Custom Search 1                   | ❌ Pending  | Self-researched uninformed search algorithm           |
+| Custom Search 1                   | ✅ Complete | Iterative Deepening DFS - memory efficient approach   |
 | Custom Search 2                   | ❌ Pending  | Self-researched informed search algorithm             |
 | Unified Command Interface         | ✅ Complete | Common interface through search.py                    |
 | Test Cases                        | ✅ Complete | Created 3 test cases with varying complexity          |
@@ -107,13 +112,14 @@ python search.py <filename> <method>
 
 Where:
 - `<filename>` is the path to the input file
-- `<method>` is one of: BFS, DFS, GBFS, AS
+- `<method>` is one of: BFS, DFS, GBFS, AS, CUS1
 
 ### Example
 ```bash
 python search.py input_data.txt BFS
 python search.py test_cases/test_case1.txt GBFS
 python search.py test_cases/test_case2.txt AS
+python search.py test_cases/test_case3.txt CUS1
 ```
 
 ### Output Format
