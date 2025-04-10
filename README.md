@@ -14,20 +14,72 @@ This repository contains an implementation of various search algorithms for the 
 ├── search.py             # Unified command-line interface for all search algorithms
 ├── input_data.txt        # Example input data file
 └── test_cases/           # Test cases directory
-    ├── test_case1.txt    # Test case with multiple possible paths
-    ├── test_case2.txt    # Complex test with multiple destinations
-    └── test_case3.txt    # Maze-like challenge with multiple paths
+    ├── test_case1.txt    # City Transportation Network (Downtown to Airport)
+    ├── test_case2.txt    # Emergency Response Network (Ambulance Routing)
+    └── test_case3.txt    # Warehouse Robot Navigation System
 ```
+
+## Input File Format
+Input files should follow this format:
+```
+Nodes:
+1: (x1,y1)
+2: (x2,y2)
+...
+Edges:
+(from,to): cost
+...
+Origin:
+start_node
+Destinations:
+goal_node1; goal_node2; ...
+```
+
+## Input Parser Details
+The `input_parser.py` module provides a robust system for parsing test case files:
+
+1. **File Reading**: The `read_file` function reads a file and filters out empty lines.
+2. **Section Splitting**: The `split_sections` function organizes lines into sections (Nodes, Edges, Origin, Destinations).
+3. **Node Parsing**: The `parse_nodes` function extracts node IDs and their (x,y) coordinates.
+4. **Edge Parsing**: The `parse_edges` function processes edge definitions, creating a dictionary of connections with costs.
+5. **Origin & Destination Parsing**: The `parse_origin` and `parse_destinations` functions extract start and goal nodes.
+6. **Data Integration**: The `build_data` function integrates all parsing functions to return structured data.
+
+The parser is designed to handle comments (lines starting with #) and malformed lines gracefully, ensuring robust processing of input data. Node definitions can include descriptive comments, which are preserved for human-readable output in the search results.
 
 ## Search Algorithms
 The following search algorithms have been implemented:
 
-- ✅ **BFS (Breadth-First Search)** - Uninformed: Expand all options one level at a time
-- ✅ **DFS (Depth-First Search)** - Uninformed: Select one option, try it, go back when no more options
-- ✅ **GBFS (Greedy Best-First Search)** - Informed: Use only the cost to reach the goal from current node
-- ✅ **A* Search** - Informed: Use both the cost to goal and cost to current node
+- ✅ **BFS (Breadth-First Search)** - Uninformed: Expands all nodes at a given depth before moving to the next level
+  - Implementation: Uses a queue (FIFO) to maintain frontier nodes
+  - Characteristics: Complete, optimal for unweighted graphs, but can be inefficient for large graphs
+  - Time Complexity: O(b^d) where b is branching factor and d is depth
+
+- ✅ **DFS (Depth-First Search)** - Uninformed: Explores as far as possible along each branch before backtracking
+  - Implementation: Uses a stack (LIFO) to maintain frontier nodes
+  - Characteristics: Not complete, not optimal, but memory-efficient
+  - Time Complexity: O(b^m) where b is branching factor and m is maximum depth
+
+- ✅ **GBFS (Greedy Best-First Search)** - Informed: Selects the node that appears closest to the goal
+  - Implementation: Uses a priority queue with Euclidean distance heuristic
+  - Characteristics: Not optimal, but can be efficient when heuristic is good
+  - Time Complexity: O(b^m) where b is branching factor and m is maximum depth
+
+- ✅ **A* Search** - Informed: Combines path cost and heuristic for optimal path finding
+  - Implementation: Uses a priority queue with f(n) = g(n) + h(n)
+  - Characteristics: Complete, optimal when heuristic is admissible
+  - Time Complexity: O(b^d) where b is branching factor and d is depth of the solution
+  - Memory Requirement: Higher than other algorithms
+
 - ❌ **CUS1 (Custom Search 1)** - Uninformed: Find a path to reach the goal (self-researched)
 - ❌ **CUS2 (Custom Search 2)** - Informed: Find shortest path with least moves (self-researched)
+
+All search algorithms are implemented to handle the following requirements:
+- **Node Expansion Order**: When all else is equal, nodes are expanded in ascending order by ID
+- **Chronological Order**: When nodes have equal priority, they're expanded in the order they were added
+- **Path Tracking**: Each algorithm tracks the complete path from origin to goal
+
+The implementation allows seamless switching between algorithms through the unified `search.py` interface.
 
 ## Implementation Roadmap
 
@@ -78,31 +130,27 @@ Where:
 - `path` is the sequence of moves in the solution (e.g., `1 -> 2 -> 3`)
 
 ## Test Cases
-Three different test cases have been developed to evaluate the algorithms:
+Three real-world scenario test cases have been developed to evaluate the algorithms:
 
-1. **Test Case 1**: A simple graph with multiple paths to a single destination, designed to test basic path-finding capabilities.
+1. **City Transportation Network** (test_case1.txt):
+   - **Scenario**: Finding the optimal route from downtown to the airport
+   - **Context**: A traveler needs to navigate from Downtown Central Station to the Airport Terminal
+   - **Constraints**: Various road distances (in km) with different route options
+   - **Challenge**: Finding the shortest path through a city road network with multiple possible routes
 
-2. **Test Case 2**: A more complex graph with multiple destinations, testing the algorithm's ability to find the most efficient path to any valid destination.
+2. **Emergency Response Network** (test_case2.txt):
+   - **Scenario**: Ambulance routing to available hospitals during an emergency
+   - **Context**: Emergency services need to find the fastest route from an accident site to either of two hospitals
+   - **Constraints**: Traffic conditions affect travel times (measured in minutes)
+   - **Challenge**: Multiple destinations with time-critical routing decisions
 
-3. **Test Case 3**: A maze-like graph with many interconnected nodes, designed to challenge algorithmic efficiency and test handling of complex path decisions.
+3. **Warehouse Robot Navigation System** (test_case3.txt):
+   - **Scenario**: Autonomous robot navigating through a warehouse
+   - **Context**: A delivery robot must find its way from the Loading Bay to the Delivery Pickup Point
+   - **Constraints**: Grid-like layout with fixed movement costs between connected locations
+   - **Challenge**: Maze-like environment requiring efficient path planning
 
 All test cases are compatible with both the currently implemented algorithms and future custom algorithms.
-
-## Input File Format
-Input files should follow this format:
-```
-Nodes:
-1: (x1,y1)
-2: (x2,y2)
-...
-Edges:
-(from,to): cost
-...
-Origin:
-start_node
-Destinations:
-goal_node1; goal_node2; ...
-```
 
 ## Assignment Requirements
 - Node expansion order: When all else is equal, nodes should be expanded in ascending order

@@ -1,37 +1,39 @@
+# City Transportation Network: Downtown to Airport
+# Scenario: Finding the most efficient route from downtown to the airport through a city road network
 Nodes:
-1: (0,0)
-2: (1,1)
-3: (2,0)
-4: (3,1)
-5: (2,2)
-6: (4,0)
-7: (5,1)
-8: (4,2)
-9: (6,2)
+1: (0,0)    # Downtown Central Station
+2: (1,1)    # Business District
+3: (2,0)    # Western Suburbs
+4: (3,1)    # Shopping Mall
+5: (2,2)    # University Campus
+6: (4,0)    # Industrial Park
+7: (5,1)    # Highway Junction
+8: (4,2)    # Residential Area
+9: (6,2)    # Airport Terminal
 Edges:
-(1,2): 2
-(2,1): 2
-(2,3): 2
-(3,2): 2
-(2,5): 3
-(5,2): 3
-(3,4): 2
-(4,3): 2
-(3,6): 4
-(6,3): 4
-(4,6): 1
-(6,4): 1
-(5,8): 3
-(8,5): 3
-(6,7): 2
-(7,6): 2
-(4,8): 2
-(8,4): 2
-(7,9): 3
-(9,7): 3
-(8,9): 4
-(9,8): 4
+(1,2): 2    # Downtown to Business District (2 km)
+(2,1): 2    # Business District to Downtown (2 km)
+(2,3): 2    # Business District to Western Suburbs (2 km)
+(3,2): 2    # Western Suburbs to Business District (2 km)
+(2,5): 3    # Business District to University Campus (3 km)
+(5,2): 3    # University Campus to Business District (3 km)
+(3,4): 2    # Western Suburbs to Shopping Mall (2 km)
+(4,3): 2    # Shopping Mall to Western Suburbs (2 km)
+(3,6): 4    # Western Suburbs to Industrial Park (4 km)
+(6,3): 4    # Industrial Park to Western Suburbs (4 km)
+(4,6): 1    # Shopping Mall to Industrial Park (1 km)
+(6,4): 1    # Industrial Park to Shopping Mall (1 km)
+(5,8): 3    # University Campus to Residential Area (3 km)
+(8,5): 3    # Residential Area to University Campus (3 km)
+(6,7): 2    # Industrial Park to Highway Junction (2 km)
+(7,6): 2    # Highway Junction to Industrial Park (2 km)
+(4,8): 2    # Shopping Mall to Residential Area (2 km)
+(8,4): 2    # Residential Area to Shopping Mall (2 km)
+(7,9): 3    # Highway Junction to Airport Terminal (3 km)
+(9,7): 3    # Airport Terminal to Highway Junction (3 km)
+(8,9): 4    # Residential Area to Airport Terminal (4 km)
+(9,8): 4    # Airport Terminal to Residential Area (4 km)
 Origin:
-1
+1           # Starting at Downtown Central Station
 Destinations:
-9 
+9           # Destination is the Airport Terminal 

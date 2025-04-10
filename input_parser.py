@@ -46,11 +46,25 @@ def parse_nodes(node_lines):
     """
     nodes = {}
     for line in node_lines:
-        node_id_str, coord_str = line.split(":")
+        # Split by the first colon to separate node_id from the rest
+        parts = line.split(":", 1)
+        if len(parts) < 2:
+            continue
+            
+        node_id_str, coord_str = parts
         node_id = int(node_id_str.strip())      # Convert the node ID to an integer.
+        
+        # Remove comments if present by splitting on '#' and taking first part
+        if '#' in coord_str:
+            coord_str = coord_str.split('#')[0]
+            
         coord_str = coord_str.strip().strip("()")  # Remove spaces and parentheses.
-        x_str, y_str = coord_str.split(",")        # Split the coordinate string.
-        nodes[node_id] = (int(x_str), int(y_str))   # Store the node with its coordinates.
+        coord_parts = coord_str.split(",")        # Split the coordinate string.
+        
+        if len(coord_parts) >= 2:
+            x_str, y_str = coord_parts[0].strip(), coord_parts[1].strip()
+            nodes[node_id] = (int(x_str), int(y_str))   # Store the node with its coordinates.
+    
     return nodes
 
 def parse_edges(edge_lines):
@@ -66,19 +80,36 @@ def parse_edges(edge_lines):
     """
     edges = {}
     for line in edge_lines:
-        edge_part, cost_str = line.split(":")
+        # Split by the first colon to separate edge_part from cost
+        parts = line.split(":", 1)
+        if len(parts) < 2:
+            continue
+            
+        edge_part, cost_str = parts
+        
+        # Remove comments if present by splitting on '#' and taking first part
+        if '#' in cost_str:
+            cost_str = cost_str.split('#')[0]
+            
         cost = int(cost_str.strip())           # Convert the cost to an integer.
         edge_part = edge_part.strip().strip("()")  # Remove extra spaces and parentheses.
-        from_str, to_str = edge_part.split(",")    # Split into source and destination.
-        from_node, to_node = int(from_str), int(to_str)
-        # If this source node hasn't been seen before, add it with an empty list.
-        if from_node not in edges:
-            edges[from_node] = []
-        # Append the (destination, cost) tuple to the source node's list.
-        edges[from_node].append((to_node, cost))
+        
+        edge_parts = edge_part.split(",")
+        if len(edge_parts) >= 2:
+            from_str, to_str = edge_parts[0].strip(), edge_parts[1].strip()
+            from_node, to_node = int(from_str), int(to_str)
+            
+            # If this source node hasn't been seen before, add it with an empty list.
+            if from_node not in edges:
+                edges[from_node] = []
+                
+            # Append the (destination, cost) tuple to the source node's list.
+            edges[from_node].append((to_node, cost))
+            
     # Sort the list of edges for each node by destination node for consistent tie-breaking.
     for from_node in edges:
         edges[from_node] = sorted(edges[from_node], key=lambda t: t[0])
+        
     return edges
 
 def parse_origin(origin_lines):
@@ -88,7 +119,16 @@ def parse_origin(origin_lines):
     :param origin_lines: A list with one string representing the origin node.
     :return: The origin node as an integer.
     """
-    return int(origin_lines[0].strip())
+    if not origin_lines:
+        return None
+        
+    origin_str = origin_lines[0].strip()
+    
+    # Remove comments if present by splitting on '#' and taking first part
+    if '#' in origin_str:
+        origin_str = origin_str.split('#')[0].strip()
+        
+    return int(origin_str)
 
 def parse_destinations(dest_lines):
     """
@@ -97,7 +137,16 @@ def parse_destinations(dest_lines):
     :param dest_lines: A list with one string from the "Destinations:" section.
     :return: A list of integers representing the destination nodes.
     """
-    return [int(item.strip()) for item in dest_lines[0].split(";")]
+    if not dest_lines:
+        return []
+        
+    dest_str = dest_lines[0].strip()
+    
+    # Remove comments if present by splitting on '#' and taking first part
+    if '#' in dest_str:
+        dest_str = dest_str.split('#')[0].strip()
+        
+    return [int(item.strip()) for item in dest_str.split(";")]
 
 def build_data(filename):
     """

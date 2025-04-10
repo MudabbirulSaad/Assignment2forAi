@@ -1,79 +1,81 @@
+# Warehouse Robot Navigation System
+# Scenario: Autonomous robot navigating through a warehouse to deliver packages
 Nodes:
-1: (1,1)
-2: (1,2)
-3: (1,3)
-4: (1,4)
-5: (1,5)
-6: (2,1)
-7: (2,3)
-8: (2,5)
-9: (3,1)
-10: (3,2)
-11: (3,3)
-12: (3,4)
-13: (3,5)
-14: (4,1)
-15: (4,3)
-16: (4,5)
-17: (5,1)
-18: (5,2)
-19: (5,3)
-20: (5,4)
-21: (5,5)
+1: (1,1)     # Loading Bay
+2: (1,2)     # Corridor A1
+3: (1,3)     # Corridor A2
+4: (1,4)     # Corridor A3
+5: (1,5)     # North Exit
+6: (2,1)     # Storage Area B1
+7: (2,3)     # Electronics Section
+8: (2,5)     # Packaging Zone
+9: (3,1)     # Storage Area C1
+10: (3,2)    # Maintenance Station
+11: (3,3)    # Central Hub
+12: (3,4)    # Quality Control
+13: (3,5)    # Shipping Desk
+14: (4,1)    # Storage Area D1
+15: (4,3)    # Office Access
+16: (4,5)    # Express Shipping
+17: (5,1)    # Storage Area E1
+18: (5,2)    # Break Room
+19: (5,3)    # Sorting Station
+20: (5,4)    # Fragile Items
+21: (5,5)    # Delivery Pickup Point
 Edges:
-(1,2): 1
-(1,6): 1
-(2,1): 1
-(2,3): 1
-(3,2): 1
-(3,4): 1
-(3,7): 1
-(4,3): 1
-(4,5): 1
-(5,4): 1
-(5,8): 1
-(6,1): 1
-(6,9): 1
-(7,3): 1
-(7,10): 1
-(7,11): 1
-(8,5): 1
-(8,13): 1
-(9,6): 1
-(9,10): 1
-(9,14): 1
-(10,7): 1
-(10,9): 1
-(10,11): 1
-(11,7): 1
-(11,10): 1
-(11,12): 1
-(11,15): 1
-(12,11): 1
-(12,13): 1
-(13,8): 1
-(13,12): 1
-(13,16): 1
-(14,9): 1
-(14,17): 1
-(15,11): 1
-(15,18): 1
-(15,19): 1
-(16,13): 1
-(16,21): 1
-(17,14): 1
-(17,18): 1
-(18,15): 1
-(18,17): 1
-(18,19): 1
-(19,15): 1
-(19,18): 1
-(19,20): 1
-(20,19): 1
-(20,21): 1
-(21,16): 1
-(21,20): 1
+(1,2): 1     # Standard corridor movement (1 unit)
+(1,6): 1     # Standard corridor movement (1 unit)
+(2,1): 1     # Standard corridor movement (1 unit)
+(2,3): 1     # Standard corridor movement (1 unit)
+(3,2): 1     # Standard corridor movement (1 unit)
+(3,4): 1     # Standard corridor movement (1 unit)
+(3,7): 1     # Standard corridor movement (1 unit)
+(4,3): 1     # Standard corridor movement (1 unit)
+(4,5): 1     # Standard corridor movement (1 unit)
+(5,4): 1     # Standard corridor movement (1 unit)
+(5,8): 1     # Standard corridor movement (1 unit)
+(6,1): 1     # Standard corridor movement (1 unit)
+(6,9): 1     # Standard corridor movement (1 unit)
+(7,3): 1     # Standard corridor movement (1 unit)
+(7,10): 1    # Standard corridor movement (1 unit)
+(7,11): 1    # Standard corridor movement (1 unit)
+(8,5): 1     # Standard corridor movement (1 unit)
+(8,13): 1    # Standard corridor movement (1 unit)
+(9,6): 1     # Standard corridor movement (1 unit)
+(9,10): 1    # Standard corridor movement (1 unit)
+(9,14): 1    # Standard corridor movement (1 unit)
+(10,7): 1    # Standard corridor movement (1 unit)
+(10,9): 1    # Standard corridor movement (1 unit)
+(10,11): 1   # Standard corridor movement (1 unit)
+(11,7): 1    # Standard corridor movement (1 unit)
+(11,10): 1   # Standard corridor movement (1 unit)
+(11,12): 1   # Standard corridor movement (1 unit)
+(11,15): 1   # Standard corridor movement (1 unit)
+(12,11): 1   # Standard corridor movement (1 unit)
+(12,13): 1   # Standard corridor movement (1 unit)
+(13,8): 1    # Standard corridor movement (1 unit)
+(13,12): 1   # Standard corridor movement (1 unit)
+(13,16): 1   # Standard corridor movement (1 unit)
+(14,9): 1    # Standard corridor movement (1 unit)
+(14,17): 1   # Standard corridor movement (1 unit)
+(15,11): 1   # Standard corridor movement (1 unit)
+(15,18): 1   # Standard corridor movement (1 unit)
+(15,19): 1   # Standard corridor movement (1 unit)
+(16,13): 1   # Standard corridor movement (1 unit)
+(16,21): 1   # Standard corridor movement (1 unit)
+(17,14): 1   # Standard corridor movement (1 unit)
+(17,18): 1   # Standard corridor movement (1 unit)
+(18,15): 1   # Standard corridor movement (1 unit)
+(18,17): 1   # Standard corridor movement (1 unit)
+(18,19): 1   # Standard corridor movement (1 unit)
+(19,15): 1   # Standard corridor movement (1 unit)
+(19,18): 1   # Standard corridor movement (1 unit)
+(19,20): 1   # Standard corridor movement (1 unit)
+(20,19): 1   # Standard corridor movement (1 unit)
+(20,21): 1   # Standard corridor movement (1 unit)
+(21,16): 1   # Standard corridor movement (1 unit)
+(21,20): 1   # Standard corridor movement (1 unit)
 Origin:
-1
+1            # Starting at Loading Bay
 Destinations:
-21 
+21           # Package needs to be delivered to Delivery Pickup Point 
