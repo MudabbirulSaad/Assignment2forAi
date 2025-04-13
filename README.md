@@ -98,7 +98,7 @@ The implementation allows seamless switching between algorithms through the unif
 | Custom Search 1                   | ✅ Complete | Iterative Deepening DFS - memory efficient approach   |
 | Custom Search 2                   | ❌ Pending  | Self-researched informed search algorithm             |
 | Unified Command Interface         | ✅ Complete | Common interface through search.py                    |
-| Test Cases                        | ✅ Complete | Created 3 test cases with varying complexity          |
+| Test Cases                        | ✅ Complete | Created 10 test cases with varying complexity          |
 | Performance Analysis              | ❌ Pending  | Compare algorithm performance metrics                 |
 | Report                            | ❌ Pending  | Create comprehensive report as per requirements       |
 
@@ -136,7 +136,7 @@ Where:
 - `path` is the sequence of moves in the solution (e.g., `1 -> 2 -> 3`)
 
 ## Test Cases
-Three real-world scenario test cases have been developed to evaluate the algorithms:
+Ten real-world scenario test cases have been developed to evaluate the algorithms:
 
 1. **City Transportation Network** (test_case1.txt):
    - **Scenario**: Finding the optimal route from downtown to the airport
@@ -155,6 +155,48 @@ Three real-world scenario test cases have been developed to evaluate the algorit
    - **Context**: A delivery robot must find its way from the Loading Bay to the Delivery Pickup Point
    - **Constraints**: Grid-like layout with fixed movement costs between connected locations
    - **Challenge**: Maze-like environment requiring efficient path planning
+
+4. **Melbourne Metro Train Network** (test_case4.txt):
+   - **Scenario**: Finding the optimal train route from Flinders Street to Glenferrie Station
+   - **Context**: A university student needs to travel from Melbourne's central station to Swinburne University
+   - **Constraints**: Fixed train lines with scheduled stops and transfer points
+   - **Challenge**: Finding the fastest route considering multiple train lines and connection times
+
+5. **Melbourne Tram Network** (test_case5.txt):
+   - **Scenario**: Finding the optimal tram route from Melbourne CBD to St Kilda Beach
+   - **Context**: A tourist seeking the most efficient way to travel from city center to a popular beach
+   - **Constraints**: Tram schedules and travel times between stops (in minutes)
+   - **Challenge**: Navigating Melbourne's extensive tram network with multiple potential routes
+
+6. **Melbourne University Campus Navigation** (test_case6.txt):
+   - **Scenario**: Finding the best walking path between university buildings
+   - **Context**: A student with multiple classes needs to find efficient routes between buildings
+   - **Constraints**: Walking times between campus locations (in minutes)
+   - **Challenge**: Multiple possible destinations (engineering or medical building) with time constraints
+
+7. **Melbourne CBD Bicycle Path Network** (test_case7.txt):
+   - **Scenario**: Commuter route planning for cyclists in Melbourne CBD
+   - **Context**: A cyclist navigating from Southern Cross Station to either RMIT or Carlton Gardens
+   - **Constraints**: Varying cycling times depending on terrain (uphill sections take longer)
+   - **Challenge**: Finding the most efficient bicycle route considering safety and effort
+
+8. **Melbourne Emergency Services Response** (test_case8.txt):
+   - **Scenario**: Fire department route planning to emergency locations
+   - **Context**: Fire trucks from Eastern Hill Fire Station responding to various emergency sites
+   - **Constraints**: Traffic conditions and response time requirements (in minutes)
+   - **Challenge**: Multiple potential emergency destinations requiring fastest possible routes
+
+9. **Melbourne Food Delivery Route** (test_case9.txt):
+   - **Scenario**: Delivery route planning from Lygon Street restaurants to suburban customers
+   - **Context**: A food delivery driver needs to find the quickest route to customer locations
+   - **Constraints**: Travel times between locations (in minutes)
+   - **Challenge**: Multiple possible delivery destinations with time-sensitive delivery requirements
+
+10. **Melbourne Tourism Route** (test_case10.txt):
+    - **Scenario**: Optimal walking tour path between popular Melbourne tourist attractions
+    - **Context**: A tourist wanting to visit key Melbourne landmarks efficiently
+    - **Constraints**: Walking times between attractions (in minutes)
+    - **Challenge**: Finding efficient routes between multiple tourist attractions with varying priorities
 
 All test cases are compatible with both the currently implemented algorithms and future custom algorithms.
 

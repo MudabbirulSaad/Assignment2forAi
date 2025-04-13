@@ -1,0 +1,171 @@
+# Melbourne Tourism Route: Key Attractions
+# Scenario: Finding the optimal walking tour path between popular Melbourne tourist attractions
+Nodes:
+1: (0,0)    # Flinders Street Station
+2: (1,0)    # Federation Square
+3: (2,0)    # ACMI (Australian Centre for the Moving Image)
+4: (3,0)    # Southbank Promenade
+5: (4,0)    # Crown Casino
+6: (0,1)    # St. Paul's Cathedral
+7: (1,1)    # Hosier Lane (Street Art)
+8: (2,1)    # Forum Theatre
+9: (3,1)    # National Gallery of Victoria
+10: (4,1)   # Arts Centre Melbourne
+11: (0,2)   # Bourke Street Mall
+12: (1,2)   # Royal Arcade
+13: (2,2)   # Melbourne Central Shopping Centre
+14: (3,2)   # State Library Victoria
+15: (4,2)   # Chinatown Precinct
+16: (0,3)   # Queen Victoria Market
+17: (1,3)   # Old Melbourne Gaol
+18: (2,3)   # RMIT University
+19: (3,3)   # Melbourne Museum
+20: (4,3)   # Royal Exhibition Building
+21: (0,4)   # Flagstaff Gardens
+22: (1,4)   # Melbourne City Baths
+23: (2,4)   # Carlton Gardens
+24: (3,4)   # Parliament House
+25: (4,4)   # Fitzroy Gardens
+26: (0,-1)  # SEA LIFE Melbourne Aquarium
+27: (1,-1)  # Immigration Museum
+28: (2,-1)  # Eureka Skydeck
+29: (3,-1)  # Melbourne River Cruises
+30: (4,-1)  # Marvel Stadium (Docklands)
+31: (0,-2)  # Melbourne Star Observation Wheel
+32: (1,-2)  # Melbourne Convention & Exhibition Centre
+33: (2,-2)  # DFO South Wharf
+34: (3,-2)  # South Wharf Promenade
+35: (4,-2)  # Polly Woodside Maritime Museum
+Edges:
+(1,2): 3    # Flinders Street Station to Federation Square (3 min)
+(2,1): 3    # Federation Square to Flinders Street Station (3 min)
+(1,6): 2    # Flinders Street Station to St. Paul's Cathedral (2 min)
+(6,1): 2    # St. Paul's Cathedral to Flinders Street Station (2 min)
+(1,26): 5   # Flinders Street Station to SEA LIFE Melbourne Aquarium (5 min)
+(26,1): 5   # SEA LIFE Melbourne Aquarium to Flinders Street Station (5 min)
+(1,27): 4   # Flinders Street Station to Immigration Museum (4 min)
+(27,1): 4   # Immigration Museum to Flinders Street Station (4 min)
+(2,3): 2    # Federation Square to ACMI (2 min)
+(3,2): 2    # ACMI to Federation Square (2 min)
+(2,7): 3    # Federation Square to Hosier Lane (3 min)
+(7,2): 3    # Hosier Lane to Federation Square (3 min)
+(2,8): 4    # Federation Square to Forum Theatre (4 min)
+(8,2): 4    # Forum Theatre to Federation Square (4 min)
+(3,4): 4    # ACMI to Southbank Promenade (4 min)
+(4,3): 4    # Southbank Promenade to ACMI (4 min)
+(3,9): 7    # ACMI to National Gallery of Victoria (7 min)
+(9,3): 7    # National Gallery of Victoria to ACMI (7 min)
+(4,5): 7    # Southbank Promenade to Crown Casino (7 min)
+(5,4): 7    # Crown Casino to Southbank Promenade (7 min)
+(4,10): 6   # Southbank Promenade to Arts Centre Melbourne (6 min)
+(10,4): 6   # Arts Centre Melbourne to Southbank Promenade (6 min)
+(4,28): 3   # Southbank Promenade to Eureka Skydeck (3 min)
+(28,4): 3   # Eureka Skydeck to Southbank Promenade (3 min)
+(4,29): 2   # Southbank Promenade to Melbourne River Cruises (2 min)
+(29,4): 2   # Melbourne River Cruises to Southbank Promenade (2 min)
+(5,30): 15  # Crown Casino to Marvel Stadium (15 min)
+(30,5): 15  # Marvel Stadium to Crown Casino (15 min)
+(5,33): 8   # Crown Casino to DFO South Wharf (8 min)
+(33,5): 8   # DFO South Wharf to Crown Casino (8 min)
+(5,34): 5   # Crown Casino to South Wharf Promenade (5 min)
+(34,5): 5   # South Wharf Promenade to Crown Casino (5 min)
+(6,7): 4    # St. Paul's Cathedral to Hosier Lane (4 min)
+(7,6): 4    # Hosier Lane to St. Paul's Cathedral (4 min)
+(6,11): 5   # St. Paul's Cathedral to Bourke Street Mall (5 min)
+(11,6): 5   # Bourke Street Mall to St. Paul's Cathedral (5 min)
+(7,8): 3    # Hosier Lane to Forum Theatre (3 min)
+(8,7): 3    # Forum Theatre to Hosier Lane (3 min)
+(8,9): 6    # Forum Theatre to National Gallery of Victoria (6 min)
+(9,8): 6    # National Gallery of Victoria to Forum Theatre (6 min)
+(8,12): 5   # Forum Theatre to Royal Arcade (5 min)
+(12,8): 5   # Royal Arcade to Forum Theatre (5 min)
+(9,10): 3   # National Gallery of Victoria to Arts Centre Melbourne (3 min)
+(10,9): 3   # Arts Centre Melbourne to National Gallery of Victoria (3 min)
+(10,15): 12 # Arts Centre Melbourne to Chinatown Precinct (12 min)
+(15,10): 12 # Chinatown Precinct to Arts Centre Melbourne (12 min)
+(11,12): 3  # Bourke Street Mall to Royal Arcade (3 min)
+(12,11): 3  # Royal Arcade to Bourke Street Mall (3 min)
+(11,16): 10 # Bourke Street Mall to Queen Victoria Market (10 min)
+(16,11): 10 # Queen Victoria Market to Bourke Street Mall (10 min)
+(12,13): 4  # Royal Arcade to Melbourne Central Shopping Centre (4 min)
+(13,12): 4  # Melbourne Central Shopping Centre to Royal Arcade (4 min)
+(12,15): 7  # Royal Arcade to Chinatown Precinct (7 min)
+(15,12): 7  # Chinatown Precinct to Royal Arcade (7 min)
+(13,14): 3  # Melbourne Central Shopping Centre to State Library Victoria (3 min)
+(14,13): 3  # State Library Victoria to Melbourne Central Shopping Centre (3 min)
+(13,17): 8  # Melbourne Central Shopping Centre to Old Melbourne Gaol (8 min)
+(17,13): 8  # Old Melbourne Gaol to Melbourne Central Shopping Centre (8 min)
+(13,18): 6  # Melbourne Central Shopping Centre to RMIT University (6 min)
+(18,13): 6  # RMIT University to Melbourne Central Shopping Centre (6 min)
+(14,15): 6  # State Library Victoria to Chinatown Precinct (6 min)
+(15,14): 6  # Chinatown Precinct to State Library Victoria (6 min)
+(14,18): 5  # State Library Victoria to RMIT University (5 min)
+(18,14): 5  # RMIT University to State Library Victoria (5 min)
+(15,24): 12 # Chinatown Precinct to Parliament House (12 min)
+(24,15): 12 # Parliament House to Chinatown Precinct (12 min)
+(16,17): 7  # Queen Victoria Market to Old Melbourne Gaol (7 min)
+(17,16): 7  # Old Melbourne Gaol to Queen Victoria Market (7 min)
+(16,21): 6  # Queen Victoria Market to Flagstaff Gardens (6 min)
+(21,16): 6  # Flagstaff Gardens to Queen Victoria Market (6 min)
+(16,22): 8  # Queen Victoria Market to Melbourne City Baths (8 min)
+(22,16): 8  # Melbourne City Baths to Queen Victoria Market (8 min)
+(17,18): 3  # Old Melbourne Gaol to RMIT University (3 min)
+(18,17): 3  # RMIT University to Old Melbourne Gaol (3 min)
+(17,22): 4  # Old Melbourne Gaol to Melbourne City Baths (4 min)
+(22,17): 4  # Melbourne City Baths to Old Melbourne Gaol (4 min)
+(18,19): 10 # RMIT University to Melbourne Museum (10 min)
+(19,18): 10 # Melbourne Museum to RMIT University (10 min)
+(18,23): 8  # RMIT University to Carlton Gardens (8 min)
+(23,18): 8  # Carlton Gardens to RMIT University (8 min)
+(19,20): 3  # Melbourne Museum to Royal Exhibition Building (3 min)
+(20,19): 3  # Royal Exhibition Building to Melbourne Museum (3 min)
+(19,23): 4  # Melbourne Museum to Carlton Gardens (4 min)
+(23,19): 4  # Carlton Gardens to Melbourne Museum (4 min)
+(19,24): 12 # Melbourne Museum to Parliament House (12 min)
+(24,19): 12 # Parliament House to Melbourne Museum (12 min)
+(20,23): 2  # Royal Exhibition Building to Carlton Gardens (2 min)
+(23,20): 2  # Carlton Gardens to Royal Exhibition Building (2 min)
+(20,25): 14 # Royal Exhibition Building to Fitzroy Gardens (14 min)
+(25,20): 14 # Fitzroy Gardens to Royal Exhibition Building (14 min)
+(21,22): 5  # Flagstaff Gardens to Melbourne City Baths (5 min)
+(22,21): 5  # Melbourne City Baths to Flagstaff Gardens (5 min)
+(21,31): 13 # Flagstaff Gardens to Melbourne Star Observation Wheel (13 min)
+(31,21): 13 # Melbourne Star Observation Wheel to Flagstaff Gardens (13 min)
+(22,23): 8  # Melbourne City Baths to Carlton Gardens (8 min)
+(23,22): 8  # Carlton Gardens to Melbourne City Baths (8 min)
+(23,24): 9  # Carlton Gardens to Parliament House (9 min)
+(24,23): 9  # Parliament House to Carlton Gardens (9 min)
+(24,25): 7  # Parliament House to Fitzroy Gardens (7 min)
+(25,24): 7  # Fitzroy Gardens to Parliament House (7 min)
+(26,27): 5  # SEA LIFE Melbourne Aquarium to Immigration Museum (5 min)
+(27,26): 5  # Immigration Museum to SEA LIFE Melbourne Aquarium (5 min)
+(26,31): 10 # SEA LIFE Melbourne Aquarium to Melbourne Star Observation Wheel (10 min)
+(31,26): 10 # Melbourne Star Observation Wheel to SEA LIFE Melbourne Aquarium (10 min)
+(26,32): 8  # SEA LIFE Melbourne Aquarium to Melbourne Convention & Exhibition Centre (8 min)
+(32,26): 8  # Melbourne Convention & Exhibition Centre to SEA LIFE Melbourne Aquarium (8 min)
+(27,28): 8  # Immigration Museum to Eureka Skydeck (8 min)
+(28,27): 8  # Eureka Skydeck to Immigration Museum (8 min)
+(27,30): 12 # Immigration Museum to Marvel Stadium (12 min)
+(30,27): 12 # Marvel Stadium to Immigration Museum (12 min)
+(28,29): 3  # Eureka Skydeck to Melbourne River Cruises (3 min)
+(29,28): 3  # Melbourne River Cruises to Eureka Skydeck (3 min)
+(28,34): 7  # Eureka Skydeck to South Wharf Promenade (7 min)
+(34,28): 7  # South Wharf Promenade to Eureka Skydeck (7 min)
+(29,34): 6  # Melbourne River Cruises to South Wharf Promenade (6 min)
+(34,29): 6  # South Wharf Promenade to Melbourne River Cruises (6 min)
+(29,35): 8  # Melbourne River Cruises to Polly Woodside Maritime Museum (8 min)
+(35,29): 8  # Polly Woodside Maritime Museum to Melbourne River Cruises (8 min)
+(30,31): 5  # Marvel Stadium to Melbourne Star Observation Wheel (5 min)
+(31,30): 5  # Melbourne Star Observation Wheel to Marvel Stadium (5 min)
+(31,32): 8  # Melbourne Star Observation Wheel to Melbourne Convention & Exhibition Centre (8 min)
+(32,31): 8  # Melbourne Convention & Exhibition Centre to Melbourne Star Observation Wheel (8 min)
+(32,33): 5  # Melbourne Convention & Exhibition Centre to DFO South Wharf (5 min)
+(33,32): 5  # DFO South Wharf to Melbourne Convention & Exhibition Centre (5 min)
+(33,34): 3  # DFO South Wharf to South Wharf Promenade (3 min)
+(34,33): 3  # South Wharf Promenade to DFO South Wharf (3 min)
+(34,35): 4  # South Wharf Promenade to Polly Woodside Maritime Museum (4 min)
+(35,34): 4  # Polly Woodside Maritime Museum to South Wharf Promenade (4 min)
+Origin:
+1           # Starting at Flinders Street Station
+Destinations:
+10; 20; 31  # Destinations are Arts Centre Melbourne, Royal Exhibition Building, or Melbourne Star Observation Wheel 

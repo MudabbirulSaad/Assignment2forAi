@@ -1,0 +1,105 @@
+# Melbourne University Campus Navigation: Student Route Planning
+# Scenario: Finding the best walking path between university buildings for a student with multiple classes
+Nodes:
+1: (0,0)    # Student Union Building (North Court)
+2: (1,0)    # Arts West Building
+3: (2,0)    # Old Arts Building
+4: (2,1)    # South Lawn
+5: (3,0)    # Old Quad
+6: (4,0)    # Babel Building
+7: (4,1)    # Eastern Resource Centre (ERC)
+8: (5,0)    # Law Building
+9: (6,0)    # Melbourne School of Design
+10: (6,1)   # Chemistry Building
+11: (7,0)   # Engineering Building
+12: (7,1)   # Mathematics & Statistics
+13: (0,-1)  # Union House
+14: (1,-1)  # FBE Building
+15: (2,-1)  # Spot Building
+16: (3,-1)  # Alan Gilbert Building
+17: (4,-1)  # Sidney Myer Asia Centre
+18: (5,-1)  # Parkville Station (Under Construction)
+19: (6,-1)  # Biosciences Building
+20: (7,-1)  # Medical Building
+21: (0,-2)  # Doug McDonell Building
+22: (1,-2)  # ICT Building
+23: (2,-2)  # Royal Parade Entrance
+24: (0,1)   # Wilson Hall
+25: (1,1)   # System Garden
+Edges:
+(1,2): 2    # Student Union to Arts West (2 min)
+(2,1): 2    # Arts West to Student Union (2 min)
+(1,13): 2   # Student Union to Union House (2 min)
+(13,1): 2   # Union House to Student Union (2 min)
+(1,24): 2   # Student Union to Wilson Hall (2 min)
+(24,1): 2   # Wilson Hall to Student Union (2 min)
+(2,3): 2    # Arts West to Old Arts (2 min)
+(3,2): 2    # Old Arts to Arts West (2 min)
+(2,14): 2   # Arts West to FBE (2 min)
+(14,2): 2   # FBE to Arts West (2 min)
+(2,25): 2   # Arts West to System Garden (2 min)
+(25,2): 2   # System Garden to Arts West (2 min)
+(3,4): 2    # Old Arts to South Lawn (2 min)
+(4,3): 2    # South Lawn to Old Arts (2 min)
+(3,5): 2    # Old Arts to Old Quad (2 min)
+(5,3): 2    # Old Quad to Old Arts (2 min)
+(3,15): 2   # Old Arts to Spot Building (2 min)
+(15,3): 2   # Spot Building to Old Arts (2 min)
+(4,25): 2   # South Lawn to System Garden (2 min)
+(25,4): 2   # System Garden to South Lawn (2 min)
+(5,6): 2    # Old Quad to Babel Building (2 min)
+(6,5): 2    # Babel Building to Old Quad (2 min)
+(5,16): 2   # Old Quad to Alan Gilbert (2 min)
+(16,5): 2   # Alan Gilbert to Old Quad (2 min)
+(6,7): 2    # Babel to ERC (2 min)
+(7,6): 2    # ERC to Babel (2 min)
+(6,8): 2    # Babel to Law Building (2 min)
+(8,6): 2    # Law Building to Babel (2 min)
+(6,17): 2   # Babel to Sidney Myer Asia Centre (2 min)
+(17,6): 2   # Sidney Myer Asia Centre to Babel (2 min)
+(7,10): 2   # ERC to Chemistry (2 min)
+(10,7): 2   # Chemistry to ERC (2 min)
+(8,9): 2    # Law to Melbourne School of Design (2 min)
+(9,8): 2    # Melbourne School of Design to Law (2 min)
+(8,18): 2   # Law to Parkville Station (2 min)
+(18,8): 2   # Parkville Station to Law (2 min)
+(9,10): 2   # Melbourne School of Design to Chemistry (2 min)
+(10,9): 2   # Chemistry to Melbourne School of Design (2 min)
+(9,11): 2   # Melbourne School of Design to Engineering (2 min)
+(11,9): 2   # Engineering to Melbourne School of Design (2 min)
+(9,19): 2   # Melbourne School of Design to Biosciences (2 min)
+(19,9): 2   # Biosciences to Melbourne School of Design (2 min)
+(10,12): 2  # Chemistry to Maths & Stats (2 min)
+(12,10): 2  # Maths & Stats to Chemistry (2 min)
+(11,12): 2  # Engineering to Maths & Stats (2 min)
+(12,11): 2  # Maths & Stats to Engineering (2 min)
+(11,20): 2  # Engineering to Medical Building (2 min)
+(20,11): 2  # Medical Building to Engineering (2 min)
+(13,14): 2  # Union House to FBE (2 min)
+(14,13): 2  # FBE to Union House (2 min)
+(13,21): 2  # Union House to Doug McDonell (2 min)
+(21,13): 2  # Doug McDonell to Union House (2 min)
+(14,15): 2  # FBE to Spot Building (2 min)
+(15,14): 2  # Spot Building to FBE (2 min)
+(14,22): 2  # FBE to ICT Building (2 min)
+(22,14): 2  # ICT Building to FBE (2 min)
+(15,16): 2  # Spot Building to Alan Gilbert (2 min)
+(16,15): 2  # Alan Gilbert to Spot Building (2 min)
+(15,23): 2  # Spot Building to Royal Parade Entrance (2 min)
+(23,15): 2  # Royal Parade Entrance to Spot Building (2 min)
+(16,17): 2  # Alan Gilbert to Sidney Myer Asia Centre (2 min)
+(17,16): 2  # Sidney Myer Asia Centre to Alan Gilbert (2 min)
+(17,18): 2  # Sidney Myer Asia Centre to Parkville Station (2 min)
+(18,17): 2  # Parkville Station to Sidney Myer Asia Centre (2 min)
+(18,19): 2  # Parkville Station to Biosciences (2 min)
+(19,18): 2  # Biosciences to Parkville Station (2 min)
+(19,20): 2  # Biosciences to Medical Building (2 min)
+(20,19): 2  # Medical Building to Biosciences (2 min)
+(21,22): 2  # Doug McDonell to ICT Building (2 min)
+(22,21): 2  # ICT Building to Doug McDonell (2 min)
+(22,23): 2  # ICT Building to Royal Parade Entrance (2 min)
+(23,22): 2  # Royal Parade Entrance to ICT Building (2 min)
+Origin:
+1           # Starting at Student Union Building (North Court)
+Destinations:
+11; 20      # Destinations are Engineering Building or Medical Building (student needs to attend a class at either location) 
