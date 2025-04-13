@@ -5,10 +5,13 @@ This repository contains an implementation of various search algorithms for the 
 
 ## Project Structure
 ```
-├── bfs_search.py         # Breadth-First Search implementation
-├── dfs_search.py         # Depth-First Search implementation
-├── gbfs_search.py        # Greedy Best-First Search implementation
-├── astar_search.py       # A* Search implementation
+├── methods/              # Directory containing all search algorithm implementations
+│   ├── bfs_search.py     # Breadth-First Search implementation
+│   ├── dfs_search.py     # Depth-First Search implementation
+│   ├── gbfs_search.py    # Greedy Best-First Search implementation
+│   ├── astar_search.py   # A* Search implementation
+│   ├── iddfs_search.py   # Iterative Deepening DFS implementation (Custom Search 1)
+│   └── bdwa_search.py    # Bidirectional Weighted A* implementation (Custom Search 2)
 ├── graph.py              # Graph class for storing and managing graph data
 ├── input_parser.py       # Functions for parsing input files
 ├── search.py             # Unified command-line interface for all search algorithms

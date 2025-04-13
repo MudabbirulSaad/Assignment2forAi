@@ -1,10 +1,10 @@
 import sys
-from bfs_search import bfs
-from dfs_search import dfs
-from gbfs_search import gbfs
-from astar_search import astar
-from iddfs_search import iddfs
-from bdwa_search import bdwa
+from methods.bfs_search import bfs
+from methods.dfs_search import dfs
+from methods.gbfs_search import gbfs
+from methods.astar_search import astar
+from methods.iddfs_search import iddfs
+from methods.bdwa_search import bdwa
 from input_parser import build_data
 from graph import Graph
 
