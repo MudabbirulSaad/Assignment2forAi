@@ -1,0 +1,88 @@
+# Melbourne Metro Train Network: Flinders Street to Glenferrie
+# Scenario: Finding the optimal train route from Flinders Street to Glenferrie Station for a university student
+Nodes:
+1: (0,0)    # Flinders Street Station
+2: (1,0)    # Southern Cross Station
+3: (2,1)    # North Melbourne Station
+4: (1,2)    # Flagstaff Station
+5: (2,2)    # Melbourne Central Station
+6: (3,2)    # Parliament Station
+7: (4,1)    # Richmond Station
+8: (5,0)    # South Yarra Station
+9: (6,0)    # Prahran Station
+10: (7,0)   # Windsor Station
+11: (8,0)   # Hawksburn Station
+12: (9,0)   # Toorak Station
+13: (10,0)  # Armadale Station
+14: (11,0)  # Malvern Station
+15: (12,0)  # Caulfield Station
+16: (13,1)  # Carnegie Station
+17: (13,-1) # Kooyong Station
+18: (14,0)  # Glen Huntly Station
+19: (14,2)  # Murrumbeena Station
+20: (15,1)  # Hughesdale Station
+21: (16,-1) # Tooronga Station
+22: (16,0)  # Gardiner Station
+23: (17,-1) # Heyington Station
+24: (18,-2) # Burnley Station
+25: (18,-1) # Hawthorn Station
+26: (19,-1) # Glenferrie Station
+Edges:
+(1,2): 4    # Flinders Street to Southern Cross (4 min)
+(2,1): 4    # Southern Cross to Flinders Street (4 min)
+(1,7): 7    # Flinders Street to Richmond (7 min)
+(7,1): 7    # Richmond to Flinders Street (7 min)
+(2,3): 5    # Southern Cross to North Melbourne (5 min)
+(3,2): 5    # North Melbourne to Southern Cross (5 min)
+(2,4): 3    # Southern Cross to Flagstaff (3 min)
+(4,2): 3    # Flagstaff to Southern Cross (3 min)
+(4,5): 2    # Flagstaff to Melbourne Central (2 min)
+(5,4): 2    # Melbourne Central to Flagstaff (2 min)
+(5,6): 2    # Melbourne Central to Parliament (2 min)
+(6,5): 2    # Parliament to Melbourne Central (2 min)
+(6,7): 5    # Parliament to Richmond (5 min)
+(7,6): 5    # Richmond to Parliament (5 min)
+(7,8): 3    # Richmond to South Yarra (3 min)
+(8,7): 3    # South Yarra to Richmond (3 min)
+(7,24): 5   # Richmond to Burnley (5 min)
+(24,7): 5   # Burnley to Richmond (5 min)
+(8,9): 2    # South Yarra to Prahran (2 min)
+(9,8): 2    # Prahran to South Yarra (2 min)
+(9,10): 2   # Prahran to Windsor (2 min)
+(10,9): 2   # Windsor to Prahran (2 min)
+(10,11): 2  # Windsor to Hawksburn (2 min)
+(11,10): 2  # Hawksburn to Windsor (2 min)
+(11,12): 2  # Hawksburn to Toorak (2 min)
+(12,11): 2  # Toorak to Hawksburn (2 min)
+(12,13): 2  # Toorak to Armadale (2 min)
+(13,12): 2  # Armadale to Toorak (2 min)
+(13,14): 3  # Armadale to Malvern (3 min)
+(14,13): 3  # Malvern to Armadale (3 min)
+(14,15): 3  # Malvern to Caulfield (3 min)
+(15,14): 3  # Caulfield to Malvern (3 min)
+(15,16): 3  # Caulfield to Carnegie (3 min)
+(16,15): 3  # Carnegie to Caulfield (3 min)
+(15,17): 4  # Caulfield to Kooyong (4 min)
+(17,15): 4  # Kooyong to Caulfield (4 min)
+(15,18): 4  # Caulfield to Glen Huntly (4 min)
+(18,15): 4  # Glen Huntly to Caulfield (4 min)
+(16,19): 3  # Carnegie to Murrumbeena (3 min)
+(19,16): 3  # Murrumbeena to Carnegie (3 min)
+(19,20): 2  # Murrumbeena to Hughesdale (2 min)
+(20,19): 2  # Hughesdale to Murrumbeena (2 min)
+(17,21): 4  # Kooyong to Tooronga (4 min)
+(21,17): 4  # Tooronga to Kooyong (4 min)
+(21,22): 3  # Tooronga to Gardiner (3 min)
+(22,21): 3  # Gardiner to Tooronga (3 min)
+(22,23): 2  # Gardiner to Heyington (2 min)
+(23,22): 2  # Heyington to Gardiner (2 min)
+(23,25): 3  # Heyington to Hawthorn (3 min)
+(25,23): 3  # Hawthorn to Heyington (3 min)
+(24,25): 3  # Burnley to Hawthorn (3 min)
+(25,24): 3  # Hawthorn to Burnley (3 min)
+(25,26): 3  # Hawthorn to Glenferrie (3 min)
+(26,25): 3  # Glenferrie to Hawthorn (3 min)
+Origin:
+1           # Starting at Flinders Street Station
+Destinations:
+26          # Destination is Glenferrie Station (Swinburne University) 

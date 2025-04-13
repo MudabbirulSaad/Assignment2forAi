@@ -1,0 +1,163 @@
+# Melbourne Emergency Services Response: Fire Department Route Planning
+# Scenario: Finding the fastest route for fire trucks from Eastern Hill Fire Station to various emergency locations
+Nodes:
+1: (0,0)    # Eastern Hill Fire Station (HQ)
+2: (1,0)    # Parliament Station
+3: (2,0)    # Treasury Gardens
+4: (3,0)    # Fitzroy Gardens
+5: (4,0)    # MCG
+6: (0,1)    # Carlton Gardens
+7: (1,1)    # Royal Exhibition Building
+8: (2,1)    # Melbourne Museum
+9: (3,1)    # Nicholson St/Victoria Pde
+10: (4,1)   # Smith St/Victoria Pde
+11: (0,2)   # Melbourne University
+12: (1,2)   # Royal Parade
+13: (2,2)   # Royal Children's Hospital
+14: (3,2)   # Flemington Rd/Elliot Ave
+15: (4,2)   # Royal Park
+16: (0,-1)  # RMIT University
+17: (1,-1)  # State Library Victoria
+18: (2,-1)  # Melbourne Central
+19: (3,-1)  # Bourke St Mall
+20: (4,-1)  # Parliament House
+21: (0,-2)  # Flagstaff Gardens
+22: (1,-2)  # Queen Victoria Market
+23: (2,-2)  # Elizabeth St/La Trobe St
+24: (3,-2)  # Russell St/La Trobe St
+25: (4,-2)  # Exhibition St/La Trobe St
+26: (0,-3)  # Southern Cross Station
+27: (1,-3)  # Collins St/Spencer St
+28: (2,-3)  # Collins St/William St
+29: (3,-3)  # Collins St/Elizabeth St
+30: (4,-3)  # Collins St/Swanston St
+31: (0,-4)  # South Wharf
+32: (1,-4)  # Crown Casino
+33: (2,-4)  # Southbank Promenade
+34: (3,-4)  # Flinders Street Station
+35: (4,-4)  # Federation Square
+Edges:
+(1,2): 2    # Eastern Hill to Parliament Station (2 min)
+(2,1): 2    # Parliament Station to Eastern Hill (2 min)
+(1,6): 3    # Eastern Hill to Carlton Gardens (3 min)
+(6,1): 3    # Carlton Gardens to Eastern Hill (3 min)
+(1,16): 3   # Eastern Hill to RMIT University (3 min)
+(16,1): 3   # RMIT University to Eastern Hill (3 min)
+(2,3): 3    # Parliament Station to Treasury Gardens (3 min)
+(3,2): 3    # Treasury Gardens to Parliament Station (3 min)
+(2,7): 2    # Parliament Station to Royal Exhibition Building (2 min)
+(7,2): 2    # Royal Exhibition Building to Parliament Station (2 min)
+(2,17): 3   # Parliament Station to State Library (3 min)
+(17,2): 3   # State Library to Parliament Station (3 min)
+(2,20): 1   # Parliament Station to Parliament House (1 min)
+(20,2): 1   # Parliament House to Parliament Station (1 min)
+(3,4): 2    # Treasury Gardens to Fitzroy Gardens (2 min)
+(4,3): 2    # Fitzroy Gardens to Treasury Gardens (2 min)
+(3,20): 2   # Treasury Gardens to Parliament House (2 min)
+(20,3): 2   # Parliament House to Treasury Gardens (2 min)
+(4,5): 3    # Fitzroy Gardens to MCG (3 min)
+(5,4): 3    # MCG to Fitzroy Gardens (3 min)
+(4,9): 4    # Fitzroy Gardens to Nicholson St/Victoria Pde (4 min)
+(9,4): 4    # Nicholson St/Victoria Pde to Fitzroy Gardens (4 min)
+(5,10): 4   # MCG to Smith St/Victoria Pde (4 min)
+(10,5): 4   # Smith St/Victoria Pde to MCG (4 min)
+(5,35): 5   # MCG to Federation Square (5 min)
+(35,5): 5   # Federation Square to MCG (5 min)
+(6,7): 1    # Carlton Gardens to Royal Exhibition Building (1 min)
+(7,6): 1    # Royal Exhibition Building to Carlton Gardens (1 min)
+(6,11): 4   # Carlton Gardens to Melbourne University (4 min)
+(11,6): 4   # Melbourne University to Carlton Gardens (4 min)
+(6,16): 3   # Carlton Gardens to RMIT University (3 min)
+(16,6): 3   # RMIT University to Carlton Gardens (3 min)
+(7,8): 2    # Royal Exhibition Building to Melbourne Museum (2 min)
+(8,7): 2    # Melbourne Museum to Royal Exhibition Building (2 min)
+(8,9): 2    # Melbourne Museum to Nicholson St/Victoria Pde (2 min)
+(9,8): 2    # Nicholson St/Victoria Pde to Melbourne Museum (2 min)
+(8,12): 3   # Melbourne Museum to Royal Parade (3 min)
+(12,8): 3   # Royal Parade to Melbourne Museum (3 min)
+(9,10): 2   # Nicholson St/Victoria Pde to Smith St/Victoria Pde (2 min)
+(10,9): 2   # Smith St/Victoria Pde to Nicholson St/Victoria Pde (2 min)
+(9,14): 5   # Nicholson St/Victoria Pde to Flemington Rd/Elliot Ave (5 min)
+(14,9): 5   # Flemington Rd/Elliot Ave to Nicholson St/Victoria Pde (5 min)
+(10,15): 4  # Smith St/Victoria Pde to Royal Park (4 min)
+(15,10): 4  # Royal Park to Smith St/Victoria Pde (4 min)
+(11,12): 2  # Melbourne University to Royal Parade (2 min)
+(12,11): 2  # Royal Parade to Melbourne University (2 min)
+(11,16): 4  # Melbourne University to RMIT University (4 min)
+(16,11): 4  # RMIT University to Melbourne University (4 min)
+(12,13): 3  # Royal Parade to Royal Children's Hospital (3 min)
+(13,12): 3  # Royal Children's Hospital to Royal Parade (3 min)
+(13,14): 2  # Royal Children's Hospital to Flemington Rd/Elliot Ave (2 min)
+(14,13): 2  # Flemington Rd/Elliot Ave to Royal Children's Hospital (2 min)
+(14,15): 2  # Flemington Rd/Elliot Ave to Royal Park (2 min)
+(15,14): 2  # Royal Park to Flemington Rd/Elliot Ave (2 min)
+(16,17): 2  # RMIT University to State Library (2 min)
+(17,16): 2  # State Library to RMIT University (2 min)
+(16,21): 3  # RMIT University to Flagstaff Gardens (3 min)
+(21,16): 3  # Flagstaff Gardens to RMIT University (3 min)
+(16,23): 3  # RMIT University to Elizabeth St/La Trobe St (3 min)
+(23,16): 3  # Elizabeth St/La Trobe St to RMIT University (3 min)
+(16,24): 2  # RMIT University to Russell St/La Trobe St (2 min)
+(24,16): 2  # Russell St/La Trobe St to RMIT University (2 min)
+(17,18): 2  # State Library to Melbourne Central (2 min)
+(18,17): 2  # Melbourne Central to State Library (2 min)
+(17,19): 3  # State Library to Bourke St Mall (3 min)
+(19,17): 3  # Bourke St Mall to State Library (3 min)
+(17,22): 2  # State Library to Queen Victoria Market (2 min)
+(22,17): 2  # Queen Victoria Market to State Library (2 min)
+(18,19): 2  # Melbourne Central to Bourke St Mall (2 min)
+(19,18): 2  # Bourke St Mall to Melbourne Central (2 min)
+(18,23): 2  # Melbourne Central to Elizabeth St/La Trobe St (2 min)
+(23,18): 2  # Elizabeth St/La Trobe St to Melbourne Central (2 min)
+(19,20): 4  # Bourke St Mall to Parliament House (4 min)
+(20,19): 4  # Parliament House to Bourke St Mall (4 min)
+(19,29): 2  # Bourke St Mall to Collins St/Elizabeth St (2 min)
+(29,19): 2  # Collins St/Elizabeth St to Bourke St Mall (2 min)
+(19,30): 2  # Bourke St Mall to Collins St/Swanston St (2 min)
+(30,19): 2  # Collins St/Swanston St to Bourke St Mall (2 min)
+(20,25): 2  # Parliament House to Exhibition St/La Trobe St (2 min)
+(25,20): 2  # Exhibition St/La Trobe St to Parliament House (2 min)
+(21,22): 2  # Flagstaff Gardens to Queen Victoria Market (2 min)
+(22,21): 2  # Queen Victoria Market to Flagstaff Gardens (2 min)
+(21,26): 3  # Flagstaff Gardens to Southern Cross Station (3 min)
+(26,21): 3  # Southern Cross Station to Flagstaff Gardens (3 min)
+(22,23): 2  # Queen Victoria Market to Elizabeth St/La Trobe St (2 min)
+(23,22): 2  # Elizabeth St/La Trobe St to Queen Victoria Market (2 min)
+(23,24): 2  # Elizabeth St/La Trobe St to Russell St/La Trobe St (2 min)
+(24,23): 2  # Russell St/La Trobe St to Elizabeth St/La Trobe St (2 min)
+(23,28): 2  # Elizabeth St/La Trobe St to Collins St/William St (2 min)
+(28,23): 2  # Collins St/William St to Elizabeth St/La Trobe St (2 min)
+(24,25): 2  # Russell St/La Trobe St to Exhibition St/La Trobe St (2 min)
+(25,24): 2  # Exhibition St/La Trobe St to Russell St/La Trobe St (2 min)
+(24,30): 2  # Russell St/La Trobe St to Collins St/Swanston St (2 min)
+(30,24): 2  # Collins St/Swanston St to Russell St/La Trobe St (2 min)
+(26,27): 1  # Southern Cross Station to Collins St/Spencer St (1 min)
+(27,26): 1  # Collins St/Spencer St to Southern Cross Station (1 min)
+(26,31): 3  # Southern Cross Station to South Wharf (3 min)
+(31,26): 3  # South Wharf to Southern Cross Station (3 min)
+(27,28): 2  # Collins St/Spencer St to Collins St/William St (2 min)
+(28,27): 2  # Collins St/William St to Collins St/Spencer St (2 min)
+(27,32): 3  # Collins St/Spencer St to Crown Casino (3 min)
+(32,27): 3  # Crown Casino to Collins St/Spencer St (3 min)
+(28,29): 2  # Collins St/William St to Collins St/Elizabeth St (2 min)
+(29,28): 2  # Collins St/Elizabeth St to Collins St/William St (2 min)
+(28,33): 3  # Collins St/William St to Southbank Promenade (3 min)
+(33,28): 3  # Southbank Promenade to Collins St/William St (3 min)
+(29,30): 2  # Collins St/Elizabeth St to Collins St/Swanston St (2 min)
+(30,29): 2  # Collins St/Swanston St to Collins St/Elizabeth St (2 min)
+(29,34): 2  # Collins St/Elizabeth St to Flinders Street Station (2 min)
+(34,29): 2  # Flinders Street Station to Collins St/Elizabeth St (2 min)
+(30,35): 2  # Collins St/Swanston St to Federation Square (2 min)
+(35,30): 2  # Federation Square to Collins St/Swanston St (2 min)
+(31,32): 2  # South Wharf to Crown Casino (2 min)
+(32,31): 2  # Crown Casino to South Wharf (2 min)
+(32,33): 2  # Crown Casino to Southbank Promenade (2 min)
+(33,32): 2  # Southbank Promenade to Crown Casino (2 min)
+(33,34): 2  # Southbank Promenade to Flinders Street Station (2 min)
+(34,33): 2  # Flinders Street Station to Southbank Promenade (2 min)
+(34,35): 1  # Flinders Street Station to Federation Square (1 min)
+(35,34): 1  # Federation Square to Flinders Street Station (1 min)
+Origin:
+1           # Starting at Eastern Hill Fire Station (HQ)
+Destinations:
+5; 13; 32   # Destinations are MCG, Royal Children's Hospital, or Crown Casino (active emergencies) 

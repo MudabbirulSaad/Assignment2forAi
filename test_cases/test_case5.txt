@@ -1,0 +1,85 @@
+# Melbourne Tram Network: CBD to St Kilda Beach
+# Scenario: Finding the optimal tram route from Melbourne CBD to St Kilda Beach on a summer day
+Nodes:
+1: (0,0)    # Flinders Street Station
+2: (0,1)    # Federation Square
+3: (1,1)    # Swanston St/Collins St
+4: (2,1)    # Swanston St/Bourke St
+5: (3,1)    # Melbourne Central
+6: (4,1)    # RMIT University
+7: (5,1)    # Melbourne University
+8: (1,-1)   # Queen St/Collins St
+9: (1,-2)   # Queen St/Flinders Ln
+10: (2,-1)  # Elizabeth St/Collins St
+11: (2,-2)  # Elizabeth St/Flinders St
+12: (3,-1)  # Exhibition St/Collins St
+13: (1,2)   # Spencer St/Collins St
+14: (1,3)   # Spencer St/Bourke St
+15: (2,3)   # Bourke St Mall
+16: (3,3)   # Parliament Station
+17: (4,2)   # Spring St/Collins St
+18: (0,-3)  # Casino/Crown Entertainment Complex
+19: (0,-4)  # Clarendon St/Whiteman St
+20: (0,-5)  # Clarendon St/Park St
+21: (1,-5)  # Albert Park
+22: (2,-6)  # St Kilda Junction
+23: (2,-7)  # Fitzroy St/Grey St
+24: (2,-8)  # The Esplanade
+25: (2,-9)  # St Kilda Beach
+Edges:
+(1,2): 3    # Flinders Street to Federation Square (3 min)
+(2,1): 3    # Federation Square to Flinders Street (3 min)
+(1,9): 5    # Flinders Street to Queen St/Flinders Ln (5 min)
+(9,1): 5    # Queen St/Flinders Ln to Flinders Street (5 min)
+(1,11): 4   # Flinders Street to Elizabeth St/Flinders St (4 min)
+(11,1): 4   # Elizabeth St/Flinders St to Flinders Street (4 min)
+(2,3): 4    # Federation Square to Swanston St/Collins St (4 min)
+(3,2): 4    # Swanston St/Collins St to Federation Square (4 min)
+(3,4): 3    # Swanston St/Collins St to Swanston St/Bourke St (3 min)
+(4,3): 3    # Swanston St/Bourke St to Swanston St/Collins St (3 min)
+(4,5): 3    # Swanston St/Bourke St to Melbourne Central (3 min)
+(5,4): 3    # Melbourne Central to Swanston St/Bourke St (3 min)
+(5,6): 4    # Melbourne Central to RMIT University (4 min)
+(6,5): 4    # RMIT University to Melbourne Central (4 min)
+(6,7): 5    # RMIT University to Melbourne University (5 min)
+(7,6): 5    # Melbourne University to RMIT University (5 min)
+(3,8): 3    # Swanston St/Collins St to Queen St/Collins St (3 min)
+(8,3): 3    # Queen St/Collins St to Swanston St/Collins St (3 min)
+(8,9): 3    # Queen St/Collins St to Queen St/Flinders Ln (3 min)
+(9,8): 3    # Queen St/Flinders Ln to Queen St/Collins St (3 min)
+(3,10): 3   # Swanston St/Collins St to Elizabeth St/Collins St (3 min)
+(10,3): 3   # Elizabeth St/Collins St to Swanston St/Collins St (3 min)
+(10,11): 3  # Elizabeth St/Collins St to Elizabeth St/Flinders St (3 min)
+(11,10): 3  # Elizabeth St/Flinders St to Elizabeth St/Collins St (3 min)
+(3,12): 4   # Swanston St/Collins St to Exhibition St/Collins St (4 min)
+(12,3): 4   # Exhibition St/Collins St to Swanston St/Collins St (4 min)
+(3,13): 5   # Swanston St/Collins St to Spencer St/Collins St (5 min)
+(13,3): 5   # Spencer St/Collins St to Swanston St/Collins St (5 min)
+(13,14): 3  # Spencer St/Collins St to Spencer St/Bourke St (3 min)
+(14,13): 3  # Spencer St/Bourke St to Spencer St/Collins St (3 min)
+(4,15): 3   # Swanston St/Bourke St to Bourke St Mall (3 min)
+(15,4): 3   # Bourke St Mall to Swanston St/Bourke St (3 min)
+(15,16): 5  # Bourke St Mall to Parliament Station (5 min)
+(16,15): 5  # Parliament Station to Bourke St Mall (5 min)
+(12,17): 4  # Exhibition St/Collins St to Spring St/Collins St (4 min)
+(17,12): 4  # Spring St/Collins St to Exhibition St/Collins St (4 min)
+(9,18): 5   # Queen St/Flinders Ln to Casino/Crown (5 min)
+(18,9): 5   # Casino/Crown to Queen St/Flinders Ln (5 min)
+(18,19): 3  # Casino/Crown to Clarendon St/Whiteman St (3 min)
+(19,18): 3  # Clarendon St/Whiteman St to Casino/Crown (3 min)
+(19,20): 5  # Clarendon St/Whiteman St to Clarendon St/Park St (5 min)
+(20,19): 5  # Clarendon St/Park St to Clarendon St/Whiteman St (5 min)
+(20,21): 4  # Clarendon St/Park St to Albert Park (4 min)
+(21,20): 4  # Albert Park to Clarendon St/Park St (4 min)
+(21,22): 6  # Albert Park to St Kilda Junction (6 min)
+(22,21): 6  # St Kilda Junction to Albert Park (6 min)
+(22,23): 4  # St Kilda Junction to Fitzroy St/Grey St (4 min)
+(23,22): 4  # Fitzroy St/Grey St to St Kilda Junction (4 min)
+(23,24): 4  # Fitzroy St/Grey St to The Esplanade (4 min)
+(24,23): 4  # The Esplanade to Fitzroy St/Grey St (4 min)
+(24,25): 3  # The Esplanade to St Kilda Beach (3 min)
+(25,24): 3  # St Kilda Beach to The Esplanade (3 min)
+Origin:
+1           # Starting at Flinders Street Station
+Destinations:
+25          # Destination is St Kilda Beach 

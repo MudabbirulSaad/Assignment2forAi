@@ -1,0 +1,165 @@
+# Melbourne Food Delivery Route: Lygon Street to Suburbs
+# Scenario: Finding the optimal route for a food delivery driver from Lygon Street restaurant to suburban customers
+Nodes:
+1: (0,0)    # Lygon Street Restaurant Precinct
+2: (1,0)    # Carlton Gardens
+3: (2,0)    # Parliament Station
+4: (3,0)    # Fitzroy Gardens
+5: (4,0)    # East Melbourne Residential
+6: (0,1)    # Melbourne University
+7: (1,1)    # Royal Exhibition Building
+8: (2,1)    # Victoria Parade
+9: (3,1)    # Wellington Parade
+10: (4,1)   # MCG Precinct
+11: (0,2)   # Princes Park
+12: (1,2)   # Royal Park
+13: (2,2)   # Royal Children's Hospital
+14: (3,2)   # Flemington Racecourse
+15: (4,2)   # Kensington Apartments
+16: (0,-1)  # RMIT University
+17: (1,-1)  # Melbourne Central
+18: (2,-1)  # Bourke Street Mall
+19: (3,-1)  # 101 Collins Street
+20: (4,-1)  # Treasury Gardens
+21: (0,-2)  # Flagstaff Gardens
+22: (1,-2)  # Queen Victoria Market
+23: (2,-2)  # State Library Victoria
+24: (3,-2)  # Chinatown
+25: (4,-2)  # Parliament House
+26: (0,-3)  # Docklands Stadium
+27: (1,-3)  # Southern Cross Station
+28: (2,-3)  # Collins Street Financial District
+29: (3,-3)  # Flinders Lane Restaurants
+30: (4,-3)  # Flinders Street Station
+31: (0,-4)  # Melbourne Star
+32: (1,-4)  # Crown Casino
+33: (2,-4)  # Southbank Restaurants
+34: (3,-4)  # Arts Centre Melbourne
+35: (4,-4)  # Royal Botanic Gardens
+Edges:
+(1,2): 3    # Lygon Street to Carlton Gardens (3 min)
+(2,1): 3    # Carlton Gardens to Lygon Street (3 min)
+(1,6): 2    # Lygon Street to Melbourne University (2 min)
+(6,1): 2    # Melbourne University to Lygon Street (2 min)
+(1,16): 5   # Lygon Street to RMIT University (5 min)
+(16,1): 5   # RMIT University to Lygon Street (5 min)
+(2,3): 4    # Carlton Gardens to Parliament Station (4 min)
+(3,2): 4    # Parliament Station to Carlton Gardens (4 min)
+(2,7): 2    # Carlton Gardens to Royal Exhibition Building (2 min)
+(7,2): 2    # Royal Exhibition Building to Carlton Gardens (2 min)
+(2,17): 5   # Carlton Gardens to Melbourne Central (5 min)
+(17,2): 5   # Melbourne Central to Carlton Gardens (5 min)
+(3,4): 3    # Parliament Station to Fitzroy Gardens (3 min)
+(4,3): 3    # Fitzroy Gardens to Parliament Station (3 min)
+(3,8): 3    # Parliament Station to Victoria Parade (3 min)
+(8,3): 3    # Victoria Parade to Parliament Station (3 min)
+(3,18): 5   # Parliament Station to Bourke Street Mall (5 min)
+(18,3): 5   # Bourke Street Mall to Parliament Station (5 min)
+(3,25): 2   # Parliament Station to Parliament House (2 min)
+(25,3): 2   # Parliament House to Parliament Station (2 min)
+(4,5): 3    # Fitzroy Gardens to East Melbourne Residential (3 min)
+(5,4): 3    # East Melbourne Residential to Fitzroy Gardens (3 min)
+(4,9): 3    # Fitzroy Gardens to Wellington Parade (3 min)
+(9,4): 3    # Wellington Parade to Fitzroy Gardens (3 min)
+(4,20): 4   # Fitzroy Gardens to Treasury Gardens (4 min)
+(20,4): 4   # Treasury Gardens to Fitzroy Gardens (4 min)
+(5,10): 4   # East Melbourne Residential to MCG Precinct (4 min)
+(10,5): 4   # MCG Precinct to East Melbourne Residential (4 min)
+(6,7): 3    # Melbourne University to Royal Exhibition Building (3 min)
+(7,6): 3    # Royal Exhibition Building to Melbourne University (3 min)
+(6,11): 5   # Melbourne University to Princes Park (5 min)
+(11,6): 5   # Princes Park to Melbourne University (5 min)
+(7,8): 3    # Royal Exhibition Building to Victoria Parade (3 min)
+(8,7): 3    # Victoria Parade to Royal Exhibition Building (3 min)
+(7,12): 5   # Royal Exhibition Building to Royal Park (5 min)
+(12,7): 5   # Royal Park to Royal Exhibition Building (5 min)
+(8,9): 4    # Victoria Parade to Wellington Parade (4 min)
+(9,8): 4    # Wellington Parade to Victoria Parade (4 min)
+(8,13): 6   # Victoria Parade to Royal Children's Hospital (6 min)
+(13,8): 6   # Royal Children's Hospital to Victoria Parade (6 min)
+(9,10): 3   # Wellington Parade to MCG Precinct (3 min)
+(10,9): 3   # MCG Precinct to Wellington Parade (3 min)
+(9,14): 8   # Wellington Parade to Flemington Racecourse (8 min)
+(14,9): 8   # Flemington Racecourse to Wellington Parade (8 min)
+(10,30): 5  # MCG Precinct to Flinders Street Station (5 min)
+(30,10): 5  # Flinders Street Station to MCG Precinct (5 min)
+(10,35): 7  # MCG Precinct to Royal Botanic Gardens (7 min)
+(35,10): 7  # Royal Botanic Gardens to MCG Precinct (7 min)
+(11,12): 4  # Princes Park to Royal Park (4 min)
+(12,11): 4  # Royal Park to Princes Park (4 min)
+(12,13): 4  # Royal Park to Royal Children's Hospital (4 min)
+(13,12): 4  # Royal Children's Hospital to Royal Park (4 min)
+(13,14): 5  # Royal Children's Hospital to Flemington Racecourse (5 min)
+(14,13): 5  # Flemington Racecourse to Royal Children's Hospital (5 min)
+(14,15): 4  # Flemington Racecourse to Kensington Apartments (4 min)
+(15,14): 4  # Kensington Apartments to Flemington Racecourse (4 min)
+(16,17): 3  # RMIT University to Melbourne Central (3 min)
+(17,16): 3  # Melbourne Central to RMIT University (3 min)
+(16,21): 4  # RMIT University to Flagstaff Gardens (4 min)
+(21,16): 4  # Flagstaff Gardens to RMIT University (4 min)
+(16,22): 5  # RMIT University to Queen Victoria Market (5 min)
+(22,16): 5  # Queen Victoria Market to RMIT University (5 min)
+(17,18): 3  # Melbourne Central to Bourke Street Mall (3 min)
+(18,17): 3  # Bourke Street Mall to Melbourne Central (3 min)
+(17,23): 2  # Melbourne Central to State Library Victoria (2 min)
+(23,17): 2  # State Library Victoria to Melbourne Central (2 min)
+(18,19): 4  # Bourke Street Mall to 101 Collins Street (4 min)
+(19,18): 4  # 101 Collins Street to Bourke Street Mall (4 min)
+(18,24): 3  # Bourke Street Mall to Chinatown (3 min)
+(24,18): 3  # Chinatown to Bourke Street Mall (3 min)
+(19,20): 3  # 101 Collins Street to Treasury Gardens (3 min)
+(20,19): 3  # Treasury Gardens to 101 Collins Street (3 min)
+(19,25): 5  # 101 Collins Street to Parliament House (5 min)
+(25,19): 5  # Parliament House to 101 Collins Street (5 min)
+(19,29): 3  # 101 Collins Street to Flinders Lane Restaurants (3 min)
+(29,19): 3  # Flinders Lane Restaurants to 101 Collins Street (3 min)
+(20,25): 4  # Treasury Gardens to Parliament House (4 min)
+(25,20): 4  # Parliament House to Treasury Gardens (4 min)
+(20,30): 5  # Treasury Gardens to Flinders Street Station (5 min)
+(30,20): 5  # Flinders Street Station to Treasury Gardens (5 min)
+(21,22): 3  # Flagstaff Gardens to Queen Victoria Market (3 min)
+(22,21): 3  # Queen Victoria Market to Flagstaff Gardens (3 min)
+(21,26): 4  # Flagstaff Gardens to Docklands Stadium (4 min)
+(26,21): 4  # Docklands Stadium to Flagstaff Gardens (4 min)
+(21,27): 3  # Flagstaff Gardens to Southern Cross Station (3 min)
+(27,21): 3  # Southern Cross Station to Flagstaff Gardens (3 min)
+(22,23): 3  # Queen Victoria Market to State Library Victoria (3 min)
+(23,22): 3  # State Library Victoria to Queen Victoria Market (3 min)
+(23,24): 3  # State Library Victoria to Chinatown (3 min)
+(24,23): 3  # Chinatown to State Library Victoria (3 min)
+(24,25): 5  # Chinatown to Parliament House (5 min)
+(25,24): 5  # Parliament House to Chinatown (5 min)
+(24,29): 3  # Chinatown to Flinders Lane Restaurants (3 min)
+(29,24): 3  # Flinders Lane Restaurants to Chinatown (3 min)
+(26,27): 3  # Docklands Stadium to Southern Cross Station (3 min)
+(27,26): 3  # Southern Cross Station to Docklands Stadium (3 min)
+(26,31): 3  # Docklands Stadium to Melbourne Star (3 min)
+(31,26): 3  # Melbourne Star to Docklands Stadium (3 min)
+(27,28): 3  # Southern Cross Station to Collins Street Financial District (3 min)
+(28,27): 3  # Collins Street Financial District to Southern Cross Station (3 min)
+(27,32): 5  # Southern Cross Station to Crown Casino (5 min)
+(32,27): 5  # Crown Casino to Southern Cross Station (5 min)
+(28,29): 2  # Collins Street Financial District to Flinders Lane Restaurants (2 min)
+(29,28): 2  # Flinders Lane Restaurants to Collins Street Financial District (2 min)
+(28,33): 5  # Collins Street Financial District to Southbank Restaurants (5 min)
+(33,28): 5  # Southbank Restaurants to Collins Street Financial District (5 min)
+(29,30): 3  # Flinders Lane Restaurants to Flinders Street Station (3 min)
+(30,29): 3  # Flinders Street Station to Flinders Lane Restaurants (3 min)
+(29,34): 4  # Flinders Lane Restaurants to Arts Centre Melbourne (4 min)
+(34,29): 4  # Arts Centre Melbourne to Flinders Lane Restaurants (4 min)
+(30,34): 2  # Flinders Street Station to Arts Centre Melbourne (2 min)
+(34,30): 2  # Arts Centre Melbourne to Flinders Street Station (2 min)
+(30,35): 5  # Flinders Street Station to Royal Botanic Gardens (5 min)
+(35,30): 5  # Royal Botanic Gardens to Flinders Street Station (5 min)
+(31,32): 4  # Melbourne Star to Crown Casino (4 min)
+(32,31): 4  # Crown Casino to Melbourne Star (4 min)
+(32,33): 3  # Crown Casino to Southbank Restaurants (3 min)
+(33,32): 3  # Southbank Restaurants to Crown Casino (3 min)
+(33,34): 2  # Southbank Restaurants to Arts Centre Melbourne (2 min)
+(34,33): 2  # Arts Centre Melbourne to Southbank Restaurants (2 min)
+(34,35): 4  # Arts Centre Melbourne to Royal Botanic Gardens (4 min)
+(35,34): 4  # Royal Botanic Gardens to Arts Centre Melbourne (4 min)
+Origin:
+1           # Starting at Lygon Street Restaurant Precinct
+Destinations:
+5; 15; 35   # Destinations are East Melbourne Residential, Kensington Apartments, or Royal Botanic Gardens 
