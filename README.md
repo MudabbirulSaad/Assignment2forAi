@@ -77,7 +77,7 @@ The following search algorithms have been implemented:
   - Time Complexity: O(b^d) where b is branching factor and d is depth of the solution
   - Benefits: Guarantees finding the shortest path while using minimal memory
 
-- ⏳ **CUS2 (Bidirectional Weighted A*)** - Informed: Hybrid approach combining multiple techniques
+- ✅ **CUS2 (Bidirectional Weighted A*)** - Informed: Hybrid approach combining multiple techniques
   - Implementation: Simultaneous search from both origin and destinations with dynamic weighting
   - Characteristics: Complete, near-optimal, with significantly improved efficiency
   - Time Complexity: O(b^(d/2)) where b is branching factor and d is depth of the solution
@@ -105,7 +105,7 @@ The implementation allows seamless switching between algorithms through the unif
 | GBFS Implementation               | ✅ Complete | Greedy Best-First Search with Euclidean heuristic     |
 | A* Search Implementation          | ✅ Complete | A* Search with Euclidean heuristic and path costs     |
 | Custom Search 1                   | ✅ Complete | Iterative Deepening DFS - memory efficient approach   |
-| Custom Search 2                   | ⏳ Planned  | Bidirectional Weighted A* - hybrid approach combining multiple techniques |
+| Custom Search 2                   | ✅ Complete | Bidirectional Weighted A* - hybrid approach combining multiple techniques |
 | Unified Command Interface         | ✅ Complete | Common interface through search.py                    |
 | Test Cases                        | ✅ Complete | Created 10 test cases with varying complexity          |
 | Performance Analysis              | ❌ Pending  | Compare algorithm performance metrics                 |
