@@ -1,9 +1,10 @@
 import sys
-from bfs_search import bfs
-from dfs_search import dfs
-from gbfs_search import gbfs
-from astar_search import astar
-from iddfs_search import iddfs
+from methods.bfs_search import bfs
+from methods.dfs_search import dfs
+from methods.gbfs_search import gbfs
+from methods.astar_search import astar
+from methods.iddfs_search import iddfs
+from methods.bdwa_search import bdwa
 from input_parser import build_data
 from graph import Graph
 
@@ -53,7 +54,7 @@ def extract_node_names(filename):
 def main():
     if len(sys.argv) != 3:
         print("Usage: python search.py <filename> <method>")
-        print("Available methods: BFS, DFS, GBFS, AS, CUS1")
+        print("Available methods: BFS, DFS, GBFS, AS, CUS1, CUS2")
         return
 
     filename = sys.argv[1]
@@ -85,9 +86,11 @@ def main():
         goal, count, path = astar(origin, destinations, edges, node_pos)
     elif method == "CUS1":
         goal, count, path = iddfs(origin, destinations, edges)
+    elif method == "CUS2":
+        goal, count, path = bdwa(origin, destinations, edges, node_pos)
     else:
         print(f"Error: Unknown method '{method}'")
-        print("Available methods: BFS, DFS, GBFS, AS, CUS1")
+        print("Available methods: BFS, DFS, GBFS, AS, CUS1, CUS2")
         return
 
     # Output in required format (must follow assignment requirements)
